@@ -1,11 +1,18 @@
+# Environment and dependencies
 .env
-node_mudules/
+node_modules/
+
+# Python caches (if any)
 __pycache__/
+*.pyc
+*.pyo
+
+# Logs and builds
 *.log
+dist/
+build/
+
+# IDE/editor files
 .DS_Store
 .vscode/
 .idea/
-dist/
-build/
-*.pyc
-*.pyo
