@@ -1,0 +1,27 @@
+{
+  "name": "group-project-ainsx",
+  "version": "1.0.0",
+  "description": "**Milestones 2–4**",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSC317-F25/group-project-Ainsx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CSC317-F25/group-project-Ainsx/issues"
+  },
+  "homepage": "https://github.com/CSC317-F25/group-project-Ainsx#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "node": "^25.1.0",
+    "server.js": "^1.0.0"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GYMGYM | Login / Sign Up</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="logo">GYMGYM</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" class="active">Sign Up / Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<main class="login-main">
+    <h1>Sign up / Login</h1>
+
+    <p class="login-intro">
+        Whats the wait? We are here to help and encourage! Sign up or Login to join us and many others on starting or continuing their journey. 
+    </p>
+
+    <form id="signupForm" class="signup-form">
+        <h3>SIGN UP:</h3>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+
+        <div class="login-links">
+            <a href="#" id="forgot">Forgot Password</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p class="toggle-text">
+            Already have an account? <a href="#" id="toggleToLogin">Login here</a>
+        </p>
+    </form>
+</main>    
+<footer>
+    <p>@ 2025 GYMGYM </p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
