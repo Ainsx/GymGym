@@ -25,7 +25,7 @@ nav a {
     color: black;
     transition: 0.2s;
 }
-
+/*a(all links)*/
 nav a:hover, 
 nav a.acitve{
     font-weight: bold;

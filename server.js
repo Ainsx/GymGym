@@ -11,8 +11,15 @@ var path = require('path');
 var StaticDirectory = path.join(__dirname, 'public');
 app.use(express.static(StaticDirectory));
 
+//redirect to storefront.
+app.get('/', (req, res) => {
+    console.log("redirecting to storefront");
+    res.redirect('/storefront.html');
+  });
+
 app.listen(port, () => {
     console.log(`Listening on http://127.0.0.1:${port}/`);
 });
 
 console.log(message);
+
