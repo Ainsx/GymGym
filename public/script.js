@@ -5,8 +5,6 @@ if(contactForm){
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-// --- Simple cart implementation (localStorage) ---
-// cart stored as array of {id,title,price,qty}
 function getCart() {
     try {
         return JSON.parse(localStorage.getItem('cart') || '[]');
