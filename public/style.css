@@ -216,3 +216,118 @@ footer{
 .toggle-text a:hover{
     text-decoration: underline;
 }
+/*sidebar menu*/
+.leftMenu{
+    
+  flex-direction: column;
+  align-items: flex-start;
+  width: 150px;
+  padding: 2rem 1rem;
+  height: 15vh; 
+  box-sizing: border-box;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+.sidebar li {
+    margin-bottom: 1.2rem;
+}
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.sidebar a:hover {
+    background-color: #e63946;
+    color: white;
+}
+.sidebar a.active {
+    background-color: #000;
+    color: white;
+}
+.storefront-layout {
+    display: flex;
+    align-items: flex-start;
+    min-height: calc(100vh - 80px);
+}
+.logo-section {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    margin-bottom: 3rem;
+}
+.logo-img {
+    max-width: 350px;
+    height: auto;
+    filter: brightness(1.1) saturate(0.9);
+}
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+}
+.storefront-layout {
+    display: flex;
+    align-items: flex-start;
+}
+.main1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+}
+.search-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+}
+.search-bar:focus,
+.search-bar:hover {
+  border-color: #e63946;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+.product-section{
+    text-align: center;
+    margin-top: 3rem;
+}  
+
+/*product-grid layout*/
+.product-grid {
+    display: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem 3rem;
+    justify-items: center;
+    align-items: start;
+    padding: 0 2rem 4rem 2rem;
+  }
+  .product img {
+    width: 220px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+  }
+  .product img:hover {
+    transform: scale(1.05);
+  }
+  .product h3 {
+    margin-top: 1rem;
+    font-weight: 600;
+  }

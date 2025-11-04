@@ -7,67 +7,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
     <nav>
-        <h2 class ="logo">GYMGYM</h2>
+        <a href="storefront.html" class="logo-link">
+            <h2 class ="logo">GYMGYM</h2>
+        </a>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="storefront.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
             <li><a href="cart.html">Shopping Cart</a></li>
-            <li><a href="#" id="loginBtn">Sign Up/Login</a></li>
+            <li><a href="login.html" id="loginBtn">Sign Up/Login</a></li>
         </ul>
     </nav>
-    </header>
+</header>
 
-    <div class="leftMenu">
-        <aside class="sidebar">
-            <ul>
-                <li></li>
-                <ul>
-                    <li><a href="mansclothing.html">"Men's Clothing"</a></li>
-                    <li><a href="womensclothing.html">Women's Clothing"</a></li>
-                    <li><a href="gymequipment.html">Women's Clothing"</a></li>
-                </ul>
+<div class="storefront-layout">
+<div class="leftMenu">
+    <aside class="sidebar">
+        <ul>
+                <li><a href="products/mansclothing.html">Men's Clothing</a></li>
+                <li><a href="products/womensclothing.html">Women's Clothing</a></li>
+                <li><a href="products/gymequipment.html">Gym Equipment</a></li>
+                <li><a href="products/supplements.html">Supplements</a></li>
             </ul>
         </aside>
-    </div>
-
-<main>
-    <section class="logo">
-        <div class="logo-content">
-            <h1>Find your Gym Essentials</h1>
-            <input type="text" placeholder="Search for products.."  />
+</div>
+<div class="main1">
+    <section class="hero-section">
+    <div class="logo-section">
+        <img src="images/gymlogo.png" alt="GymGym Logo" class="logo-img">
+        <div class="search-container">
+          <input type="text" placeholder="Search for product" class="search-bar">
         </div>
-    </section>
+    </div>
+</section>
+</div>        
 
-        <!-- simple product list -->
-        <section class="products" style="max-width:900px;margin:20px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-            <article class="product">
-                <h3>Dumbbell Set</h3>
-                <p>$49.99</p>
-                <button data-add-to-cart data-id="db-1" data-title="Dumbbell Set" data-price="49.99">Add to cart</button>
-            </article>
-            <article class="product">
-                <h3>Yoga Mat</h3>
-                <p>$19.99</p>
-                <button data-add-to-cart data-id="ym-1" data-title="Yoga Mat" data-price="19.99">Add to cart</button>
-            </article>
-            <article class="product">
-                <h3>Protein Powder</h3>
-                <p>$29.99</p>
-                <button data-add-to-cart data-id="pp-1" data-title="Protein Powder" data-price="29.99">Add to cart</button>
-            </article>
-        </section>
-
-
-
-
-</main>
-
-
-
-
+</div>
+<section class="product-section">
+    <div class="product-grid">
+      <div class="product">
+          <h3>Gym Equipment</h3>
+          <img src="images/hammerRack.webp" alt="Gym Equipment">
+      </div>
+      <div class="product">
+          <h3>Men's Clothing</h3>
+          <img src="images/mensclothing.png" alt="Men's Clothing">
+      </div>
+      <div class="product">
+          <h3>Women's Clothing</h3>
+          <img src="images/womensclothing.png" alt="Women's Clothing">
+      </div>
+      <div class="product">
+          <h3>Supplements</h3>
+          <img src="images/supplements.png" alt="Supplements">
+      </div>
+  </div>
+</section>
 <script src="script.js"></script>
 
 
