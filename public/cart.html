@@ -12,15 +12,13 @@
     <nav>
       <a href="storefront.html" class="logo-link">
         <h2 class ="logo">GYMGYM</h2>
-      <a href="index.html" class="logo-link">
-        <h2 class="logo">GYMGYM</h2>
+      
       </a>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="storefront.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a class="active" href="cart.html">Shopping Cart</a></li>
-        <li><a href="#" id="loginBtn">Sign Up/Login</a></li>
+        <li><a href="login.html" id="loginBtn">Sign Up/Login</a></li>
       </ul>
     </nav>
   </header>
@@ -31,6 +29,11 @@
       Your cart is empty.
     </div>
     <div id="cart-items" style="max-width:800px;margin:20px auto;text-align:left"></div>
+    <div class="checkout-container">
+      <button class="checkout-btn" onclick="window.location.href='checkout.html'">
+        Proceed to Checkout
+      </button>
+    </div>
   </main>
 
   <footer>
