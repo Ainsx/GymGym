@@ -47,6 +47,7 @@ nav a.acitve{
 .about-img img{
     max-width: 400px;
     border-radius: 10px;
+    filter: brightness(1.1) saturate(0.9)
 }
 
 .contact{
@@ -264,7 +265,7 @@ footer{
     margin-bottom: 3rem;
 }
 .logo-img {
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
     filter: brightness(1.1) saturate(0.9);
 }
@@ -620,3 +621,52 @@ main {
   border-radius: 8px;
   font-size: 1rem;
 }
+.best-seller {
+    margin: 3rem auto;
+    text-align: center;
+  }
+  
+  .best-seller h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Visible window for best seller*/
+  .slider-frame {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  
+  .slider-track {
+    display: flex;
+    gap: 2rem;
+    animation: slide 100s linear infinite;
+  }
+  
+  /* Each product */
+  .best-seller .product {
+    flex: 0 0 auto;
+  }
+  
+  .best-seller img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .slider-track:hover {
+    animation-play-state: paused;
+  }
+  /* Sliding animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
