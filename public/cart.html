@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GYMGYM | Cart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cart-empty {
+      border: 2px dashed #ccc;
+      padding: 40px;
+      border-radius: 12px;
+      color: #555;
+      font-size: 1.1rem;
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h2 class="logo">GYMGYM</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="active" href="cart.html">Cart</a></li>
+        <li><a href="#" id="loginBtn">Sign Up/Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Cart</h1>
+    <div class="cart-empty" id="cart-empty">
+      Your cart is empty.
+    </div>
+    <div id="cart-items" style="max-width:800px;margin:20px auto;text-align:left"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <footer>
+    <p>@ 2025 GYMGYM</p>
+  </footer>
+</body>
+</html>
