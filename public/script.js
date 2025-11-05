@@ -1,13 +1,12 @@
 //About page contact form
-const contactForm= document.getElementById("contactform");
+const contactForm= document.getElementById("contactForm");
 
 if(contactForm){
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        document.addEventListener('DOMContentLoaded', () => updateCartEmptyState());
 
-    const first = document.getElementById("first-name").value;
-    const last = document.getElementById("last-name").value;
+    const first = document.getElementById("firstName").value;
+    const last = document.getElementById("lastName").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
@@ -20,6 +19,7 @@ if(contactForm){
     contactForm.reset(); 
 });
 }
+document.addEventListener('DOMContentLoaded', () => updateCartEmptyState());
 
 function getCart() {
     try {
@@ -88,24 +88,8 @@ document.addEventListener('click', (e) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Login Page: Sign Up / Login Form
-const signupForm= document.getElementById("signup-form");
+const signupForm= document.getElementById("signupForm");
 
 if(signupForm){
     signupForm.addEventListener("submit", (e) => {

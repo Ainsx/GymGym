@@ -11,7 +11,7 @@ var path = require('path');
 var StaticDirectory = path.join(__dirname, 'public');
 app.use(express.static(StaticDirectory));
 
-//redirect to storefront.
+// redirect to storefront.
 app.get('/', (req, res) => {
     console.log("redirecting to storefront");
     res.redirect('/storefront.html');
