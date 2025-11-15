@@ -107,5 +107,27 @@ if(signupForm){
     signupForm.reset(); 
 });
 }
+async function loadBestSellers() {
+  try {
+    const res = await fetch('/api/products/best'); // 
+    const data = await res.json();
 
+    const track = document.getElementById('bestSellerTrack');
+    if (!track) return;
+
+    track.innerHTML = data.products.map(p => `
+      <div class="product">
+        <a href="product.html?id=${p.id}">
+          <img src="${p.image_paths[0]}" alt="${p.name}">
+        </a>
+        <h4>${p.name}</h4>
+        <p>$${p.price}</p>
+      </div>
+    `).join('');
+  } catch (err) {
+    console.error('Best sellers load failed:', err);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadBestSellers);
 

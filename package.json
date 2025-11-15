@@ -20,6 +20,11 @@
   },
   "homepage": "https://github.com/CSC317-F25/group-project-Ainsx#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "pg": "^8.16.3"
   }
 }

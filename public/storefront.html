@@ -39,9 +39,17 @@
     <div class="logo-section">
         <img src="images/gymlogo.png" alt="GymGym Logo" class="logo-img">
         <div class="search-container">
-          <input type="text" placeholder="Search for product" class="search-bar">
+            <form id="searchForm">
+          <input
+           type="text"
+           id="searchInput"
+           placeholder="Search for product"
+           class="search-bar"/>
+        <button type="submit">Search</button>
+          </form>
         </div>
     </div>
+    <section id="search-results"></section>
 </section>
 </div>        
 
@@ -72,39 +80,10 @@
 </section>
 
 <section class="best-seller">
-    <h3>Best Sellers</h3>
-    <div class="slider-frame">
-        <div class="slider-track">
-    <div class="product">
-          <a href="products/gymequipment.html">
-          <img src="images/comingsoon.png" alt="Gym Equipment"></a>
-    </div>
-    <div class="product">
-          <a href="products/gymequipment.html">
-            <img src="images/comingsoon.png" alt="Gym Equipment"></a>
-    </div>
-    <div class="product">
-          <a href="products/gymequipment.html">
-            <img src="images/comingsoon.png" alt="Gym Equipment"></a>
-    </div>
-    <div class="product">
-          <a href="products/gymequipment.html">
-            <img src="images/comingsoon.png" alt="Gym Equipment"></a>
-    </div>
-    <div class="product">
-        <a href="products/gymequipment.html"><img src="images/comingsoon.png"></a>
-      </div>
-      <div class="product">
-        <a href="products/gymequipment.html"><img src="images/comingsoon.png"></a>
-      </div>
-      <div class="product">
-        <a href="products/gymequipment.html"><img src="images/comingsoon.png"></a>
-      </div>
-      <div class="product">
-        <a href="products/gymequipment.html"><img src="images/comingsoon.png"></a>
-      </div>
-</div>
-</div>
+  <h3>Best Sellers</h3>
+  <div class="slider-frame">
+    <div id="bestSellerTrack" class="slider-track"></div>
+  </div>
 </section>
 
 
@@ -112,13 +91,48 @@
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
+  const resultsDiv = document.getElementById("search-results");
+
+  if (!searchForm) return;
+
+  searchForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const query = searchInput.value.trim();
+    if (!query) return;
+
+    try {
+      const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+
+      if (!data.products.length) {
+        resultsDiv.innerHTML = "<p>No products found.</p>";
+        return;
+      }
+
+      resultsDiv.innerHTML = data.products
+        .map(
+          (p) => `
+            <div class="product-card">
+              <a href="product.html?id=${p.id}">
+                <img src="${p.image_paths[0]}" alt="${p.name}">
+                <h3>${p.name}</h3>
+                <p>$${p.price}</p>
+              </a>
+            </div>`
+        )
+        .join("");
+    } catch (err) {
+      console.error("Search failed:", err);
+      resultsDiv.innerHTML = "<p>Something went wrong. Please try again.</p>";
+    }
+  });
+});
+</script>
 <script src="script.js"></script>
-
-
-
-
-
-
     <footer>
         <p>© 2025 GYMGYM — All Rights Reserved</p>
       </footer>

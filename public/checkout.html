@@ -29,12 +29,8 @@
           
           <div class="checkout-items">
             <h3>List of items</h3>
-            <ul>
-              <li>Item 1 </li>
-              <li>Item 2 </li>
-              <li>Item 3 </li>
-            </ul>
-            <h4>Total Price: <span></span></h4>
+            <ul id ="cart-items"></ul> 
+            <h4>Total Price: <span id="total-price">$0.00</span></h4>
           </div>
     
           
@@ -70,16 +66,40 @@
     
       </main>
     
-   
+<script>
+async function loadCheckout() {
+  try {
+    const res = await fetch('/api/cart');
+    const data = await res.json();
 
+    // If backend requires login first:
+    if (res.status === 401) {
+      alert('Please log in to view your cart.');
+      window.location.href = '../login.html';
+      return;
+    }
 
-<script src=""></script>
+    const cartList = document.getElementById('cart-items');
+    const totalSpan = document.getElementById('total-price');
+    let total = 0;
 
+    cartList.innerHTML = data.cart.map(item => {
+      total += item.price * item.quantity;
+      return `
+        <li>
+          <img src="${item.image_paths[0]}" width="60">
+          ${item.name} — ${item.quantity} × $${item.price.toFixed(2)}
+        </li>
+      `;
+    }).join('');
 
-
-
-
-
+    totalSpan.textContent = `$${total.toFixed(2)}`;
+  } catch (err) {
+    console.error('Checkout load failed:', err);
+  }
+}
+loadCheckout();
+</script>
     <footer>
         <p>© 2025 GYMGYM — All Rights Reserved</p>
       </footer>
